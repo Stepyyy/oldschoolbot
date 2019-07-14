@@ -50,6 +50,7 @@ const wyrm = require('../../../data/monsters/wyrm');
 const hespori = require('../../../data/monsters/hespori');
 
 module.exports = class extends Command {
+
 	constructor(...args) {
 		super(...args, {
 			cooldown: 1,
@@ -131,7 +132,7 @@ module.exports = class extends Command {
 				return msg.send(loot.length > 0 ? loot : 'You got nothing.');
 			}
 			case 'ZULRAH': {
-				if (quantity > 500) return msg.send('I can only kill 500 Zulrahs at a time!');
+				if (quantity > 100000) return msg.send('I can only kill 100,000 Zulrahs at a time!');
 				const loot = zulrah.kill(quantity);
 				return msg.send(loot.length > 0 ? loot : 'You got nothing.');
 			}
@@ -426,4 +427,5 @@ module.exports = class extends Command {
 				return msg.send("I don't have that monster!");
 		}
 	}
+
 };
